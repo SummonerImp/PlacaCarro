@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Rodizio do carro</string>
+    <string name="rodizio">Rodizio na: </string>
+    <string name="seg">segunda</string>
+    <string name="ter">terça</string>
+    <string name="txtMainText">Digite a placa do seu carro</string>
+    <string name="qua">quarta</string>
+    <string name="qui">quinta</string>
+    <string name="sex">sexta</string>
+    <string name="aviso">Não existe uma placa com final com caractere</string>
+    <string name="msgAviso">Aviso</string>
+    <string name="msgBtn">OK</string>
+</resources>
