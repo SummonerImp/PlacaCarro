@@ -28,25 +28,27 @@ public class MainActivity extends AppCompatActivity {
     public void sendRes(View view){
         try {
             String placa = txtPlaca.getText().toString();
-            placa = placa.substring(placa.length() - 1);
-            double i = Double.parseDouble(placa);
-            String rod = null;
-            if (i == 1 || i == 2) {
-                rod = getString(R.string.seg);
-            } else if (i == 3 || i == 4) {
-                rod = getString(R.string.ter);
-            } else if (i == 5 || i == 6) {
-                rod = getString(R.string.qua);
-            } else if (i == 7 || i == 8) {
-                rod = getString(R.string.qui);
-            } else if (i == 9 || i == 0) {
-                rod = getString(R.string.sex);
+            String placa1 = placa.substring(placa.length() - 1);
+            int i = Integer.parseInt(placa1);
+            if(placa.matches("^[A-Za-z]{3}\\d{4}$")){
+                String rod = null;
+                if (i == 1 || i == 2) {
+                    rod = getString(R.string.seg);
+                } else if (i == 3 || i == 4) {
+                    rod = getString(R.string.ter);
+                } else if (i == 5 || i == 6) {
+                    rod = getString(R.string.qua);
+                } else if (i == 7 || i == 8) {
+                    rod = getString(R.string.qui);
+                } else if (i == 9 || i == 0) {
+                    rod = getString(R.string.sex);
+                }
+                rod = String.valueOf(rod);
+                Intent intent = new Intent(this, resultadoPlaca.class);
+                intent.putExtra(EXTRA_MESSAGE, rod);
+                startActivity(intent);
             }
-            rod = String.valueOf(rod);
-            Intent intent = new Intent(this, resultadoPlaca.class);
-            intent.putExtra(EXTRA_MESSAGE, rod);
-            startActivity(intent);
-        }catch(NumberFormatException e){
+        }catch(Exception e){
             txtPlaca.setText("");
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.msgAviso);

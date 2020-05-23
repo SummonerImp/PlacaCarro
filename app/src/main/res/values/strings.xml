@@ -7,7 +7,7 @@
     <string name="qua">quarta</string>
     <string name="qui">quinta</string>
     <string name="sex">sexta</string>
-    <string name="aviso">Não existe uma placa com final com caractere</string>
+    <string name="aviso">Verifique se a placa esta digitada corretamente</string>
     <string name="msgAviso">Aviso</string>
     <string name="msgBtn">OK</string>
 </resources>
