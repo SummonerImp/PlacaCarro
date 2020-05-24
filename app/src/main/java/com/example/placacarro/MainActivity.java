@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(EXTRA_MESSAGE, rod);
                 startActivity(intent);
             }
+            else{
+                throw new Exception();
+            }
         }catch(Exception e){
             txtPlaca.setText("");
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
