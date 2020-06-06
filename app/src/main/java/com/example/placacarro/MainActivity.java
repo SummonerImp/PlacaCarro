@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myapp.MESSAGE";
-    Button btnVerificar;
+    Button btnVerificar, btnFoto, btnFoto2;
     EditText txtPlaca;
     TextView textView;
     @Override
@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         txtPlaca = (EditText)findViewById(R.id.txtPlaca);
         textView = (TextView)findViewById(R.id.textView);
         textView.setText(R.string.txtMainText);
+        btnFoto = (Button)findViewById(R.id.btnFoto);
+        btnFoto2 = (Button)findViewById(R.id.btnFoto);
     }
     public void sendRes(View view){
         try {
@@ -59,5 +61,15 @@ public class MainActivity extends AppCompatActivity {
             builder.setPositiveButton(R.string.msgBtn, null);
             builder.create().show();
         }
+        /*Modificar o Exercicio anterior para incluir uma nova tela que permite ao usuário capturar diversar imagens e criar uma galeria na aplicação e outra em que ele pode selecionar as imagens da galeria*/
+    }
+    public void galeria (View v){
+        Intent intent = new Intent(this, Foto.class);
+        startActivity(intent);
+    }
+
+    public void selImg (View v){
+        Intent it = new Intent(this, Selecionar.class);
+        startActivity(it);
     }
 }
